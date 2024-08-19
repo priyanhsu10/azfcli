@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.server.models";
+option java_multiple_files = true;
+message AzfRepoZipRequest{
+  string id = 1;
+  bytes content = 2;
+}
+message CommandRequest{
+  string id = 1;
+  bytes content = 2;
+}
+message  Output{
+  string output = 1;
+}
+service  AzfService{
+  rpc build(stream AzfRepoZipRequest) returns (stream Output);
+  rpc execute( CommandRequest) returns (stream Output);
+}
