@@ -74,6 +74,16 @@ public class Test {
             // Add logic for each command
             if(command.equals("help")) {
                 System.out.println("Available commands: help, hello, exit");
+                return;
+            }
+            if(command.startsWith("build")) {
+                String[] arr = command.split(" ");
+//                CountDownLatch latch = new CountDownLatch(1);
+//                CommandResponseObserver responseObserver = new CommandResponseObserver(latch);
+//                azfServiceStub.build(CommandRequest.newBuilder().setCommand(command).build(),responseObserver);
+//                latch.await();
+                System.out.println("Available commands: help, hello, exit");
+                return;
             }
             CountDownLatch latch = new CountDownLatch(1);
             CommandResponseObserver responseObserver = new CommandResponseObserver(latch);
