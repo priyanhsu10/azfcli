@@ -24,7 +24,7 @@ class BuildServiceTest {
 
     public BuildServiceTest() {
         ManagedChannel managedChannel = ManagedChannelBuilder
-                .forAddress("localhost", 5001)
+                .forAddress("localhost", 9090)
                 .usePlaintext()
                 .build();
         this.azfServiceStub = AzfServiceGrpc.newStub(managedChannel);
