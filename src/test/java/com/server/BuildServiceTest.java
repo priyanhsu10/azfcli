@@ -38,7 +38,7 @@ class BuildServiceTest {
     @Test
     public void testupload() throws FileNotFoundException, InterruptedException {
         CountDownLatch latch = new CountDownLatch(1);
-        FileUploadResponse response = new FileUploadResponse();
+        FileUploadResponse response = new FileUploadResponse(latch);
         StreamObserver<AzfRepoZipRequest> request = this.azfServiceStub.build(response);
 
         Path p = Paths.get("/Users/priyanshuparate/projects/java/basics/source/test.zip");
